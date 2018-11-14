@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body class="container">
+<% include partials/header.ejs%>
+    
+<div class="col-xs-8 col-xs-offset-2">
+        <h2 class="text-center">Write a new task</h2>
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="title">Title: </label>
+                <input 
+                    type="text" 
+                    name="title" 
+                    id="title" 
+                    class="form-control" 
+                    placeholder="Entry a new title" 
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="body">Entry your task</label>
+                <textarea
+                    class="form-control"
+                    id="body"
+                    name="body"
+                    rows="3"
+                    required
+                >
+                </textarea>
+            </div>
+
+            <div class="form-group">
+                <input 
+                    type="submit" 
+                    value="Post Entry" 
+                    class="btn btn-primary"
+                    placeholder="Entry your activity"
+                >
+            </div>
+        </form>
+    </div>
+<% include partials/footer.ejs%>

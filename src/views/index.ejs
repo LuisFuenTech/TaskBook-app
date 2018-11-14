@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body class="container">
+<% include partials/header.ejs%>
+    
+<% if(entries.length) { %>
+    <% entries.forEach(function(entry){ %>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <%= entry.title %>
+            <div class="pull-right">
+              <%= entry.published %>
+            </div>
+          </div>
+          <div class="panel-body">
+            <%= entry.content %>
+          </div>
+        </div>
+    <% }) %>
+  <% } else {%>
+    <p>Add a task</p>
+  <% } %>
+
+<footer class="bg-light text-center p-2">
+      <p class="h3">AppTask 2018 - Luis Fuentes</p>
+</footer>
+
+<% include partials/footer.ejs%>
